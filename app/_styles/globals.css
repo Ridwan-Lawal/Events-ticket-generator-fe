@@ -1,0 +1,77 @@
+@import url(https://db.onlinewebfonts.com/c/1a5c2d8bbd4e28d99a6efcbb9a5b378f?family=JejuMyeongjo);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: radial-gradient(
+        52.52% 32.71% at 50% 97.66%,
+        rgba(36, 160, 181, 0.2) 0%,
+        rgba(36, 160, 181, 0) 100%
+      ),
+      #02191d;
+    padding: 0px 0px 112px;
+  }
+  h1 {
+    @apply text-2xl md:text-[32px];
+  }
+}
+
+@layer components {
+  nav {
+    @apply border py-3 px-4 rounded-[12px] border-color-green-500 flex items-center max-w-[1200px] mx-auto h-[68px] md:h-[76px]  justify-between bg-color-green-800;
+  }
+  nav button {
+    @apply uppercase px-4 py-3 md:px-6 md:py-4 rounded-[12px] gap-2 flex items-center  bg-white text-sm md:text-base leading-[20px] text-color-green-950;
+  }
+
+  /* main */
+  .first-div {
+    @apply bg-color-green-700 md:bg-color-green-650 border border-color-green-600 rounded-[32px] md:rounded-[40px] px-6 py-6 md:px-12 md:py-12 max-w-[700px] mx-auto flex flex-col gap-8;
+  }
+
+  .second-div {
+    @apply bg-color-green-700 md:px-6 md:py-6 md:rounded-[32px] md:border md:border-[#0E464F] flex flex-col gap-8;
+  }
+
+  /* ticket type card  */
+  .ticket-type-card {
+    @apply flex flex-col p-3 items-start gap-3 self-stretch h-[110px] md:w-[162px]  rounded-[12px];
+  }
+  .not-active {
+    @apply border-2 border-color-green-500;
+  }
+  .active {
+    @apply border bg-color-green-550   border-color-green-500;
+  }
+
+  .ticket-type-card h2 {
+    @apply capitalize text-white text-2xl font-semibold leading-[26.4px];
+  }
+  .ticket-type-card div {
+    @apply flex flex-col justify-center items-start self-stretch;
+  }
+  .ticket-type-card div p:first-of-type {
+    @apply text-color-text-1 leading-[24px] uppercase;
+  }
+  .ticket-type-card div p:last-of-type {
+    @apply text-[#d9d9d9] text-sm leading-[21px];
+  }
+
+  .ticket-cards {
+    @apply flex flex-col md:flex-row  p-4 justify-center items-center gap-4 bg-color-green-850 border border-color-green-750 rounded-[24px];
+  }
+}
+
+@layer utilities {
+  .tech-event-gradient {
+    background: radial-gradient(
+        103.64% 57.39% at 14.02% 32.06%,
+        rgba(36, 160, 181, 0.2) 0%,
+        rgba(36, 160, 181, 0) 100%
+      ),
+      rgba(10, 12, 17, 0.1);
+  }
+}

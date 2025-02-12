@@ -1,0 +1,42 @@
+    Form Elements:
+        Full Name: Text input for the user's full name.
+
+        Email Address: Email input field.
+        Avatar Upload: Users should
+
+         upload their avatar image and store it using Cloudinary or any image hosting service. The form should only accept and submit the image URL.
+
+        Submit Button: Button to submit the form.
+
+    Form Validation:
+        Ensure all required fields are filled in before submission.
+        The email should have a valid format.
+        The avatar upload should accept Cloudinary URLs or any image link.
+            Provide clear error messages near the respective field if validation fails.
+
+    State Persistence
+        The form should retain user inputs using IndexedDB or local storage so that the data is not lost on page refresh.
+
+    Accessibility
+        Ensure all form fields, hints, and error messages are screen-reader accessible.
+        All elements must be focusable, with clear hover and focus states.
+            Users must be able to navigate the form and submit it using only the keyboard.
+    Ticket Generation
+        On successful submission, generate and display a Conference Ticket containing:
+            Full Name
+            Email Address
+            Avatar (displayed as an image from the provided URL)
+        The ticket should only be generated if the form passes validation.
+    Responsive Design
+        Ensure the form and ticket layout adjust seamlessly across different screen sizes .
+            Optimize for small screens with proper spacing and stacking.
+
+PAGES
+
+- ticket selection - /
+- Create ticket- /ticket/create
+- ticket view- /ticket/view
+
+TECHS
+Framework - next
+state management - contexts
