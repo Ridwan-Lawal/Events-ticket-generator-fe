@@ -13,7 +13,7 @@ export default function StepOneForm() {
 
   function handleTicketTypeError() {
     if (ticketDetails?.ticketType) {
-      setTicketDetails((cur: object) => ({
+      setTicketDetails((cur) => ({
         ...cur,
         step: cur?.step + 1,
         ticketsTypeErrorMsg: "",
