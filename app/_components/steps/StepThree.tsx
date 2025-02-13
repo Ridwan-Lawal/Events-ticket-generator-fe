@@ -3,7 +3,7 @@ import FormHeader from "@/app/_components/form/FormHeader";
 import { alatsi, roadRage } from "@/app/_styles/font";
 import ticketBg from "@/public/bg.svg";
 import Image from "next/image";
-import userAvatar from "@/public/User.img.png";
+
 import bar from "@/public/bar.svg";
 import {
   initialState,
