@@ -33,15 +33,8 @@ export function useImageUpload(setTicketDetails: (arg: object) => void) {
     }
   }
 
-  const [isDragging, setIsDragging] = useState(false);
-
   function handleDragOver(e) {
     e.preventDefault();
-    setIsDragging(true);
-  }
-
-  function handleDragLeave() {
-    setIsDragging(false);
   }
 
   async function handleDrop(e) {

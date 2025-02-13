@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useActionState, useEffect, useState } from "react";
+import React, { useActionState, useEffect } from "react";
 import FormHeader from "@/app/_components/form/FormHeader";
 import uploadIcon from "@/public/upload.svg";
 import Image from "next/image";
