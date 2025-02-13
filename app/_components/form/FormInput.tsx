@@ -1,12 +1,6 @@
 import React from "react";
 
-interface formInputProps {
-  children: React.ReactNode;
-  error: string | boolean;
-  label: string;
-}
-
-export default function FormInput({ children, error, label }: formInputProps) {
+export default function FormInput({ children, error, label }) {
   return (
     <fieldset className="form-field ">
       <div>
