@@ -16,13 +16,8 @@ export default function StepTwoForm() {
 
   const [state, formAction, isPending] = useActionState(stepTwoAction, null);
 
-  const {
-    handleDrop,
-    handleDragLeave,
-    handleDragOver,
-    handleImageUpload,
-    isImageUploading,
-  } = useImageUpload(setTicketDetails);
+  const { handleDrop, handleDragOver, handleImageUpload, isImageUploading } =
+    useImageUpload(setTicketDetails);
 
   const { errors, inputs } = state ?? {};
 
@@ -63,7 +58,6 @@ export default function StepTwoForm() {
             <div
               className="upload-image-block relative overflow-hidden group"
               onDragOver={handleDragOver}
-              onDragLeave={handleDragLeave}
               onDrop={handleDrop}
             >
               {ticketDetails?.avatar && (

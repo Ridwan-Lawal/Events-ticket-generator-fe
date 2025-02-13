@@ -2,11 +2,6 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-interface FormContextType {
-  ticketDetails: object;
-  setTicketDetails: (arg: object) => void;
-}
-
 export const initialState = {
   step: 1,
   ticketType: "",
@@ -18,7 +13,7 @@ export const initialState = {
   ticketsTypeErrorMsg: "",
 };
 
-const FormContext = createContext<FormContextType | null>(null);
+const FormContext = createContext(null);
 
 import React from "react";
 

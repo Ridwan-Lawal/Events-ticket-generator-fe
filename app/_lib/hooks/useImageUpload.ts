@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export function useImageUpload(setTicketDetails: (arg: object) => void) {
   const [isImageUploading, setIsImageUploading] = useState(false);
@@ -66,12 +67,11 @@ export function useImageUpload(setTicketDetails: (arg: object) => void) {
     } finally {
       setIsImageUploading(false);
     }
-    setIsDragging(false);
   }
 
   return {
     handleDrop,
-    handleDragLeave,
+
     handleDragOver,
     handleImageUpload,
     isImageUploading,
