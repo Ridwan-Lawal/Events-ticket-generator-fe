@@ -13,7 +13,9 @@
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-loader-spinner": "^6.1.6"
+    "react-hot-toast": "^2.5.1",
+    "react-loader-spinner": "^6.1.6",
+    "zod": "^3.24.2"
   },
   "packageManager": "npm@10.5.2",
   "overrides": {

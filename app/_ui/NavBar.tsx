@@ -22,9 +22,15 @@ export default function NavBar() {
         ))}
       </ul>
 
-      <button className="font-jeju hover:bg-[#24A0B5] hover:border hover:border-[#d9d9d9] transition-all ease-in-out  hover:text-[#d9d9d9]">
+      <button className="font-jeju hover:bg-[#24A0B5] hover:border hover:border-[#d9d9d9] transition-all ease-in-out  hover:text-[#d9d9d9] group">
         <span>my tickets</span>
-        <Image src={arrowIcon} alt="arrow-icon" quality={100} priority={true} />
+        <Image
+          src={arrowIcon}
+          alt="arrow-icon"
+          quality={100}
+          priority={true}
+          className="group-hover:-rotate-45 transition-transform duration-300"
+        />
       </button>
     </nav>
   );

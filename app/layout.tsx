@@ -1,6 +1,8 @@
+import FormContextProvider from "@/app/_lib/contexts/FormContext";
 import { roboto } from "@/app/_styles/font";
 import NavBar from "@/app/_ui/NavBar";
 import "@_styles/globals.css";
+import { Toaster } from "react-hot-toast";
 
 interface Metadata {
   title: {
@@ -34,7 +36,11 @@ export default function RootLayout({
           <NavBar />
         </header>
 
-        <main>{children}</main>
+        <FormContextProvider>
+          <main>{children}</main>
+        </FormContextProvider>
+
+        <Toaster />
       </body>
     </html>
   );

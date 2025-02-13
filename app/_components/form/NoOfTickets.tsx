@@ -1,16 +1,18 @@
 "use client";
 
+import { useTicketDetails } from "@/app/_lib/contexts/FormContext";
 import { ChevronDown } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 export default function NoOfTickets() {
+  const { ticketDetails, setTicketDetails } = useTicketDetails();
+
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
   const onToggleDropdown = () => setIsDropdownOpen((cur: boolean) => !cur);
 
   useEffect(() => {
     function closeTicketNoDropdownOnBlur(e) {
-      console.log(!e?.target?.closest(".tickets-no-dropdown"));
       if (!e?.target?.closest(".tickets-no-dropdown")) {
         setIsDropdownOpen(false);
       }
@@ -31,7 +33,9 @@ export default function NoOfTickets() {
           className="flex items-center p-3 gap-2 border border-color-green-750 rounded-[12px] "
           onClick={onToggleDropdown}
         >
-          <p className="text-white leading-[24px] flex-grow">1</p>
+          <p className="text-white leading-[24px] flex-grow">
+            {ticketDetails?.noOfTickets}
+          </p>
           <ChevronDown
             className={`text-white size-6 cursor-pointer ${
               isDropdownOpen ? "rotate-180" : "rotate-0"
@@ -46,6 +50,12 @@ export default function NoOfTickets() {
                 <li
                   className="text-white leading-[24px] hover:cursor-pointer py-2 px-2 hover:bg-color-green-600 transition"
                   key={ticketNo}
+                  onClick={() =>
+                    setTicketDetails((cur: object) => ({
+                      ...cur,
+                      noOfTickets: ticketNo,
+                    }))
+                  }
                 >
                   {ticketNo}
                 </li>

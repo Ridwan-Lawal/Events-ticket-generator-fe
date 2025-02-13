@@ -1,10 +1,32 @@
+"use client";
+
 import React from "react";
 import FormHeader from "@/app/_components/form/FormHeader";
 import TechEvent from "@/app/_components/form/TechEvent";
 import TicketTypeCard from "@/app/_components/form/TicketTypeCard";
 import NoOfTickets from "@/app/_components/form/NoOfTickets";
+import { useTicketDetails } from "@/app/_lib/contexts/FormContext";
+import toast from "react-hot-toast";
 
 export default function StepOneForm() {
+  const { ticketDetails, setTicketDetails } = useTicketDetails();
+
+  function handleTicketTypeError() {
+    if (ticketDetails?.ticketType) {
+      setTicketDetails((cur: object) => ({
+        ...cur,
+        step: cur?.step + 1,
+        ticketsTypeErrorMsg: "",
+      }));
+    } else {
+      setTicketDetails((cur: object) => ({
+        ...cur,
+        ticketsTypeErrorMsg: "Please select a ticket Type",
+      }));
+      toast.error("Please select a ticket type!");
+    }
+  }
+
   return (
     <div className="first-div">
       {/* header  */}
@@ -13,10 +35,9 @@ export default function StepOneForm() {
         headerText="ticket selection"
         step={1}
         progressWidth="w-[33.3%]"
+        flexDirection="flex-col"
       />
 
-      {/* the form div, exist on desktop but not mobile */}
-      {/* step 1 */}
       <div className="second-div ">
         {/* tickets event location, and date */}
         <TechEvent />
@@ -27,9 +48,16 @@ export default function StepOneForm() {
         <div className="space-y-[32px]">
           {/*;==== select ticket type ==== */}
           <div className="space-y-2.5">
-            <p className="leading-[24px] text-color-text-1 ">
-              Select Ticket Type:
-            </p>
+            <div className="flex items-center justify-between ">
+              <p className="leading-[24px] text-color-text-1 ">
+                Select Ticket Type:
+              </p>
+              {ticketDetails?.ticketsTypeErrorMsg && (
+                <p className="error-msg">
+                  {ticketDetails?.ticketsTypeErrorMsg}
+                </p>
+              )}
+            </div>
 
             {/* ticket cards */}
             <div className="ticket-cards ">
@@ -37,7 +65,7 @@ export default function StepOneForm() {
 
               <TicketTypeCard ticketPrice="$150" accessType="vip" />
 
-              <TicketTypeCard ticketPrice="$150" accessType="vvip" />
+              <TicketTypeCard ticketPrice="$500" accessType="vvip" />
             </div>
           </div>
 
@@ -45,11 +73,20 @@ export default function StepOneForm() {
           <NoOfTickets />
 
           {/* buttons */}
-          <div className="flex flex-col items-start self-stretch gap-4 md:flex-row md:gap-6 md:items-end md:justify-end">
-            <button className="flex items-center justify-center self-stretch gap-2 py-3 px-6   bg-[#24A0B5] w-full rounded-[8px] font-jeju leading-[24px] text-white hover:bg-white hover:text-[#24A0B5] transition-colors">
+          <div className="btn-container">
+            <button className="btn-color-green" onClick={handleTicketTypeError}>
               Next
             </button>
-            <button className="flex items-center justify-center self-stretch gap-2 py-3 px-6 border border-[#24A0B5]  text-[#24A0B5] w-full rounded-[8px] font-jeju leading-[24px] hover:bg-[#24A0B5] hover:text-white transition-colors ">
+            <button
+              className="btn-transparent"
+              onClick={() =>
+                setTicketDetails((cur: object) => ({
+                  ...cur,
+                  ticketType: "",
+                  noOfTickets: 1,
+                }))
+              }
+            >
               Cancel
             </button>
           </div>

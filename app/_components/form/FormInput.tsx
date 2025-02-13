@@ -7,7 +7,6 @@ interface formInputProps {
 }
 
 export default function FormInput({ children, error, label }: formInputProps) {
-  console.log(error);
   return (
     <fieldset className="form-field ">
       <div>
@@ -16,7 +15,7 @@ export default function FormInput({ children, error, label }: formInputProps) {
         </label>
 
         {/* error message */}
-        <p className="error-msg">Please enter your name</p>
+        {error && <p className="error-msg">{error}</p>}
       </div>
 
       <div>{children}</div>
