@@ -44,7 +44,7 @@ export default function StepThree() {
 
       {/*============= ticket block ============*/}
       <div className="py-8 px-[21px] flex flex-col justify-center items-center gap-2.5 self-stretch rounded-[24px]">
-        <div className=" relative">
+        <div className=" relative w-[300px] h-[600px]">
           <Image src={ticketBg} alt="ticketBg" quality={100} priority={true} />
 
           {/* ticket information */}
@@ -117,7 +117,7 @@ export default function StepThree() {
 
           {/* bar code */}
           <div className="flex items-center  justify-center">
-            <div className=" absolute bottom-9 w-[230px] flex justify-center items-center gap-0.5">
+            <div className=" absolute bottom-9 flex justify-center items-center gap-0.5">
               {Array.from({ length: 45 }, (_, i) => i + 1).map(
                 (num: number) => (
                   <Image
