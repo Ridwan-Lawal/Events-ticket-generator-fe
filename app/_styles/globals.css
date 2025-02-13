@@ -38,7 +38,7 @@
 
   /* ticket type card  */
   .ticket-type-card {
-    @apply flex flex-col p-3 items-start gap-3 self-stretch h-[110px] md:w-[162px]  rounded-[12px];
+    @apply flex flex-col p-3 items-start gap-3 self-stretch h-[110px] md:w-[162px]  rounded-[12px] hover:bg-[#2c545b] hover:border hover:border-[#197686];
   }
   .not-active {
     @apply border-2 border-color-green-500;
@@ -62,6 +62,35 @@
 
   .ticket-cards {
     @apply flex flex-col md:flex-row  p-4 justify-center items-center gap-4 bg-color-green-850 border border-color-green-750 rounded-[24px];
+  }
+
+  /* forms  */
+  .form-field {
+    @apply flex flex-col gap-3;
+  }
+
+  .form-field label {
+    @apply capitalize text-color-text-1 leading-[24px];
+  }
+
+  .form-field .error-msg {
+    @apply text-[#29abc2] text-[11px] italic;
+  }
+  .form-field div:last-of-type {
+    @apply flex items-center p-3 border rounded-[12px] border-color-green-750 self-stretch gap-2;
+  }
+
+  .form-field div:first-of-type {
+    @apply flex items-center justify-between gap-2;
+  }
+
+  .form-field input {
+    @apply focus:outline-none bg-transparent text-white leading-[24px]  flex-grow;
+  }
+
+  /* step 3 */
+  .step-3-container {
+    @apply max-w-[700px] mx-auto py-8 px-6 md:p-12 flex flex-col justify-center items-center rounded-[24px] border border-color-green-600 bg-color-green-650 gap-8 self-stretch w-full;
   }
 }
 

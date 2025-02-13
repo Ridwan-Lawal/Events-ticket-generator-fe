@@ -4,16 +4,20 @@ interface FormHeaderProps {
   headerText: string;
   step: number;
   progressWidth: string;
+  flexDirection: string;
 }
 
 export default function FormHeader({
   headerText,
   step,
   progressWidth,
+  flexDirection = "flex-col",
 }: FormHeaderProps) {
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+      <div
+        className={`flex ${flexDirection} gap-3 md:flex-row md:items-center md:justify-between`}
+      >
         {/* step name */}
         <h1 className={`text-white font-jeju  capitalize`}>{headerText}</h1>
 

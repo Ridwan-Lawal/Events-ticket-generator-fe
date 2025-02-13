@@ -9,7 +9,7 @@ export default function NoOfTickets() {
   const onToggleDropdown = () => setIsDropdownOpen((cur: boolean) => !cur);
 
   useEffect(() => {
-    function closeTicketNoDropdownOnBlur(e: Event) {
+    function closeTicketNoDropdownOnBlur(e) {
       console.log(!e?.target?.closest(".tickets-no-dropdown"));
       if (!e?.target?.closest(".tickets-no-dropdown")) {
         setIsDropdownOpen(false);

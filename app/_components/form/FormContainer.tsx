@@ -1,125 +1,54 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import FormHeader from "@/app/_components/form/FormHeader";
-
-import TicketTypeCard from "@/app/_components/form/TicketTypeCard";
-import NoOfTickets from "@/app/_components/form/NoOfTickets";
-import uploadIcon from "@/public/upload.svg";
-import Image from "next/image";
+import { alatsi } from "@/app/_styles/font";
 
 export default function FormContainer() {
-  const [isDragging, setIsDragging] = useState(false);
-
-  const handleDragOver = (e) => {
-    e.preventDefault();
-    setIsDragging(true);
-  };
-
-  const handleDragLeave = () => {
-    setIsDragging(false);
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    setIsDragging(false);
-    const files = e.dataTransfer.files;
-    if (files.length > 0) {
-      alert(`${files.length} file(s) selected`);
-    }
-  };
-
-  const handleFileInputChange = (e) => {
-    const files = e.target.files;
-    if (files.length > 0) {
-      alert(`${files.length} file(s) selected`);
-    }
-  };
-
   return (
-    <div className="first-div">
-      {/* header  */}
-      {/* ticket selection */}
-      <FormHeader
-        headerText="attendee details"
-        step={2}
-        progressWidth="w-[66.6%]"
-      />
+    <div className="step-3-container ">
+      <div className="border w-full">
+        <FormHeader
+          headerText="Ready"
+          step={3}
+          progressWidth="w-full"
+          flexDirection="flex-row justify-between"
+        />
+      </div>
 
-      <form action="" className="second-div ">
-        {/* avatar */}
-        <fieldset className=" flex flex-col padding pt-6 px-6 pb-12 items-start gap-8 self-stretch border bg-color-green-850 rounded-[24px]  border-[#07373F]">
-          <h2 className="capitalize text-color-text-1 leading-[24px] ">
-            upload profile photo
-          </h2>
+      <div className="border w-full flex flex-col items-center text-center gap-3 md:gap-4">
+        <h2 className="md:hidden text-2xl font-bold leading-[33.6px] text-color-text-1">
+          Your Ticket is Booked!
+        </h2>
 
-          {/* <div className="h-[200px] flex justify-center items-center  self-stretch gap-2.5 bg-opacity-20 bg-black border">
-            <input
-              type="file"
-              name="avatar"
-              id="avatar"
-              placeholder="drag & drop"
-              className="file:border file:border-red-500 h-[240px] w-[240px]"
-            />
-          </div> */}
-          <div className="h-[200px] flex justify-center items-center  self-stretch gap-2.5 bg-opacity-20  bg-black ">
-            <div
-              className="p-6 border-4 border-[#24A0B5]  text-center h-[240px] w-[240px] flex-col items-center flex justify-center gap-4  bg-color-green-600 rounded-[32px]"
-              onDragOver={handleDragOver}
-              onDragLeave={handleDragLeave}
-              onDrop={handleDrop}
-            >
-              <Image src={uploadIcon} alt="upload" quality={100} />
-              <label
-                htmlFor="fileInput"
-                className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg cursor-pointer hover:bg-blue-600"
-              >
-                click to upload
-              </label>
-              <input
-                type="file"
-                id="fileInput"
-                className="hidden"
-                onChange={handleFileInputChange}
-              />
-            </div>
-          </div>
-        </fieldset>
+        {/* desktop */}
+        <h2
+          className={`hidden md:block text-white text-center md:text-[32px] ${alatsi.className} `}
+        >
+          Your Ticket is Booked!
+        </h2>
+        <p className="leading-[24px] text-color-text-1">
+          You can <span className="font-semibold">download</span> or Check your
+          email for a copy
+        </p>
+      </div>
 
-        <div className="h-1 bg-color-green-750" />
-
-        {/* first form: ticket Type, No of tickets */}
-        <div className="space-y-[32px]">
-          {/*;==== select ticket type ==== */}
-          <div className="space-y-2.5">
-            <p className="leading-[24px] text-color-text-1 ">
-              Select Ticket Type:
-            </p>
-
-            {/* ticket cards */}
-            <div className="ticket-cards ">
-              <TicketTypeCard ticketPrice="Free" accessType="regular" />
-
-              <TicketTypeCard ticketPrice="$150" accessType="vip" />
-
-              <TicketTypeCard ticketPrice="$150" accessType="vvip" />
-            </div>
-          </div>
-
-          {/* No of tickets */}
-          <NoOfTickets />
-
-          {/* buttons */}
-          <div className="flex flex-col items-start self-stretch gap-4 md:flex-row md:gap-6 md:items-end md:justify-end">
-            <button className="flex items-center justify-center self-stretch gap-2 py-3 px-6   bg-[#24A0B5] w-full rounded-[8px] font-jeju leading-[24px] text-white hover:bg-white hover:text-[#24A0B5] transition-colors">
-              Next
-            </button>
-            <button className="flex items-center justify-center self-stretch gap-2 py-3 px-6 border border-[#24A0B5]  text-[#24A0B5] w-full rounded-[8px] font-jeju leading-[24px] hover:bg-[#24A0B5] hover:text-white transition-colors ">
-              Cancel
-            </button>
-          </div>
-        </div>
-      </form>
+      {/* ticket block */}
+      <div className="py-8 px-[21px] flex flex-col justify-center items-center gap-2.5 self-stretch rounded-[24px]"></div>
     </div>
   );
 }
+
+// start step 3
+// "color-green-950": "#0A0C11",
+// "color-green-900": "#02191D",
+// "color-green-850": "#052228",
+// "color-green-800": "#05252C",
+// "color-green-750": "#07373F",
+// "color-green-700": "#08252B",
+// "color-green-650": "#041E23",
+// "color-green-600": "#0E464F",
+// "color-green-550": "#12464E",
+// "color-green-500": "#197686",
+// "color-green-400": "#24A0B5",
+// "color-text-1": "#fafafa",

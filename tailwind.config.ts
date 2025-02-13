@@ -12,6 +12,9 @@ export default {
       jeju: ["JejuMyeongjo"],
     },
     extend: {
+      screens: {
+        xs: "480px",
+      },
       colors: {
         "color-green-950": "#0A0C11",
         "color-green-900": "#02191D",

@@ -1,6 +1,7 @@
 import { Noto_Serif_KR } from "next/font/google";
 import { Roboto } from "next/font/google";
 import { Road_Rage } from "next/font/google";
+import { Alatsi } from "next/font/google";
 
 export const notoSerif = Noto_Serif_KR({
   subsets: ["latin"],
@@ -18,5 +19,10 @@ export const roboto = Roboto({
 export const roadRage = Road_Rage({
   subsets: ["latin"],
   display: "swap",
+  weight: ["400"],
+});
+
+export const alatsi = Alatsi({
+  subsets: ["latin"],
   weight: ["400"],
 });
