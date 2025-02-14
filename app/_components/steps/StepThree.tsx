@@ -105,7 +105,7 @@ export default function StepThree() {
                   </p>
                 </div>
 
-                <div className="ticket-details-block col-span-2 gap-1">
+                <div className="ticket-details-block col-span-2 gap-1 break-all">
                   <p>Special request?</p>
                   <p className="text-[10px] font-normal">
                     {ticketDetails?.request || "N/A"}

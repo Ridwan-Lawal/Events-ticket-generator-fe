@@ -175,6 +175,7 @@ export default function StepTwoForm() {
             defaultValue={inputs?.request || ticketDetails?.request}
             autoComplete="request"
             disabled={isPending}
+            maxLength={70}
             aria-label="special request"
             aria-required={true}
             className="h-[127px] w-full bg-transparent focus:outline-none text-white"
