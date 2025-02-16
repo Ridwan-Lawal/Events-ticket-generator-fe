@@ -192,7 +192,9 @@ export default function StepTwoForm() {
             disabled={isPending}
             className="btn-color-green"
           >
-            {isPending ? "Creating tickets..." : "Get my free ticket"}
+            {isPending
+              ? "Creating tickets..."
+              : `Get your ${ticketDetails?.ticketType} ticket`}
           </button>
           <button
             type="button"

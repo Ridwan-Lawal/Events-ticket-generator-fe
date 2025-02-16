@@ -86,7 +86,7 @@
   }
 
   .error-msg {
-    @apply text-[#29abc2] text-[11px] italic;
+    @apply text-red-500 text-[11px] italic;
   }
   .form-field div:last-of-type {
     @apply flex items-center p-3 border rounded-[12px] border-color-green-750 self-stretch gap-2;
